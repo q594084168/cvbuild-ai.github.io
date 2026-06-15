@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great ATS Resume Optimizer</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Replace vague verbs with specific action words</li><li style="margin-bottom:8px;color:#5C5C5C">Add context: what was the situation before your work?</li><li style="margin-bottom:8px;color:#5C5C5C">Include measurable outcomes wherever possible</li><li style="margin-bottom:8px;color:#5C5C5C">Remove filler words and get to the point</li><li style="margin-bottom:8px;color:#5C5C5C">Align your language with the job description keywords</li></ol></div>
+  <div class="section"><h2>How to Write a Great ATS Resume Optimizer</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Extract keywords from the job description before you start writing</li><li style="margin-bottom:8px;color:#5C5C5C">Match your job titles to industry-standard equivalents</li><li style="margin-bottom:8px;color:#5C5C5C">Use both acronym and full term: 'Search Engine Optimization (SEO)'</li><li style="margin-bottom:8px;color:#5C5C5C">Integrate keywords naturally into achievement bullets</li><li style="margin-bottom:8px;color:#5C5C5C">Save as .docx for maximum ATS compatibility</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Responsible for social media and posting content on various platforms.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Developed and executed a multi-platform content strategy across Instagram, LinkedIn, and Twitter, growing combined follower count by 340% and driving 2,500+ monthly website visits through organic social.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Job description asks for 'project management' but my resume says 'managed projects.'</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Project Management Professional (PMP) with 5 years leading cross-functional initiatives. Managed 12+ concurrent projects using Agile/Scrum methodology in Jira, delivering 94% on-time completion rate. Reduced project delivery cycle from 6 months to 10 weeks through process optimization.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">The biggest resume mistake is listing responsibilities instead of achievements. 'Responsible for managing a budget' tells me nothing. 'Managed a $2M annual budget, reducing operational costs by 18% while maintaining service quality' tells me everything.</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">75% of Fortune 500 companies use ATS to screen resumes. Your resume must contain the EXACT keywords from the job description. 'Managed teams' won't match 'team leadership.' 'Coded in Python' won't match 'Python development.' Mirror the job posting language exactly — ATS doesn't understand synonyms.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'improve'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'improve-ats'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

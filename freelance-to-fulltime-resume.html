@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Freelance to Full-Time Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Identify transferable skills that apply to your target industry</li><li style="margin-bottom:8px;color:#5C5C5C">Reframe past roles in language your new industry understands</li><li style="margin-bottom:8px;color:#5C5C5C">Lead with a strong objective statement explaining your pivot</li><li style="margin-bottom:8px;color:#5C5C5C">Highlight relevant certifications, courses, or side projects</li><li style="margin-bottom:8px;color:#5C5C5C">De-emphasize industry-specific jargon from your old field</li></ol></div>
+  <div class="section"><h2>How to Write a Great Freelance to Full-Time Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Identify 3-5 transferable skills from your current industry to the target</li><li style="margin-bottom:8px;color:#5C5C5C">Reframe past roles using the vocabulary of your new field</li><li style="margin-bottom:8px;color:#5C5C5C">Include any courses, certifications, or side projects that bridge the gap</li><li style="margin-bottom:8px;color:#5C5C5C">Write a strong career-change objective explaining your pivot</li><li style="margin-bottom:8px;color:#5C5C5C">De-emphasize jargon specific to your old industry</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Teacher for 10 years now want to work in corporate training. Have classroom experience.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Learning & Development professional with 10 years of instructional design and facilitation experience. Designed and delivered 200+ training modules, managed diverse groups of 30+ learners, and improved assessment scores by 22% year-over-year through data-driven curriculum iteration.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Teacher wanting to switch to corporate training but no corporate experience.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Learning & Development professional with 10 years of instructional design experience. Designed and delivered 200+ training modules with 92% satisfaction rating. Managed diverse learner groups of 30+ with differentiated instruction techniques. Completed ATD Instructional Design Certificate. Seeking corporate L&D role.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Career changers need to translate, not hide, their experience. Every role has transferable skills: teachers are trainers and curriculum designers; retail managers are operations leaders; military personnel are logistics and leadership experts. Use your new industry's vocabulary.</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Career changers aren't starting from zero — they're starting from a different angle. 'Teacher' becomes 'Instructional Designer with 10 years training delivery experience.' Identify the 3 skills your old and new careers share, and make those the headline of your resume.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'career-change'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'improve-career'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

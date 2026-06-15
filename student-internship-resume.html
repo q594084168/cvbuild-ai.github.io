@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Student & Internship Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Highlight relevant coursework, projects, and academic achievements</li><li style="margin-bottom:8px;color:#5C5C5C">Include internships, volunteer work, and campus leadership</li><li style="margin-bottom:8px;color:#5C5C5C">Use action verbs even for academic work (Designed, Built, Led, Analyzed)</li><li style="margin-bottom:8px;color:#5C5C5C">Quantify where possible: GPA, project size, team members, event attendance</li><li style="margin-bottom:8px;color:#5C5C5C">Focus on transferable skills: communication, teamwork, problem-solving</li></ol></div>
+  <div class="section"><h2>How to Write a Great Student & Internship Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Highlight relevant coursework, academic projects, and GPA if strong</li><li style="margin-bottom:8px;color:#5C5C5C">Include internships, volunteer work, campus leadership, and part-time jobs</li><li style="margin-bottom:8px;color:#5C5C5C">Use action verbs even for academic experience</li><li style="margin-bottom:8px;color:#5C5C5C">Quantify where possible: project scope, team size, event attendance</li><li style="margin-bottom:8px;color:#5C5C5C">Focus on transferable skills: communication, teamwork, problem-solving</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">College student looking for my first job. Good grades and hard worker.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Business Administration graduate (GPA 3.8) with 2 marketing internships. Led campus entrepreneurship club growing membership from 15 to 85. Built social media campaign reaching 10K students for university fundraising event.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">College student looking for my first job with good grades.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Business Administration graduate (GPA 3.8) with 2 marketing internships. Led campus entrepreneurship club, growing membership from 15 to 85 and organizing a startup pitch competition with 200+ attendees. Built social media campaign reaching 10K students for university fundraising event that exceeded goal by 40%.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">You have more experience than you think. Class projects, volunteer work, club leadership, and part-time jobs all count. Frame them as professional achievements — 'Managed cash register and inventory' becomes 'Handled $2K+ daily transactions with 100% drawer accuracy.'</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">You have more experience than you think. Class projects, volunteer work, and part-time jobs all count. Frame them professionally: 'Worked cash register' becomes 'Handled $2K+ daily transactions with 100% drawer accuracy.' Always show results, not just participation.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'entry-level'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'bullet-entry'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

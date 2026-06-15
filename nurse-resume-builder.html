@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Nurse Resume Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Start with a strong action verb (Led, Built, Delivered, Increased)</li><li style="margin-bottom:8px;color:#5C5C5C">Include specific metrics — numbers, percentages, dollar amounts</li><li style="margin-bottom:8px;color:#5C5C5C">Show the impact: what changed because of your work?</li><li style="margin-bottom:8px;color:#5C5C5C">Keep it to 1-2 lines per bullet point</li><li style="margin-bottom:8px;color:#5C5C5C">Use the STAR format: Situation, Task, Action, Result</li></ol></div>
+  <div class="section"><h2>How to Write a Great Nurse Resume Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Lead with patient load, unit type, and clinical setting</li><li style="margin-bottom:8px;color:#5C5C5C">Include measurable patient outcomes and quality improvements</li><li style="margin-bottom:8px;color:#5C5C5C">List certifications (BLS, ACLS, PALS) and EMR systems (Epic, Cerner)</li><li style="margin-bottom:8px;color:#5C5C5C">Show leadership: precepting, charge nurse, committee roles</li><li style="margin-bottom:8px;color:#5C5C5C">Quantify: patient ratios, satisfaction scores, readmission reductions</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Managed a team of 5 people and worked on quarterly reports.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Led a cross-functional team of 5 analysts, streamlining quarterly reporting processes that reduced delivery time by 40% and eliminated 120+ hours of manual work annually.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Worked as a nurse in the ICU taking care of patients.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Delivered critical care to 6-patient ICU caseload in a 24-bed Level 1 Trauma unit, achieving 98% patient satisfaction and reducing central line infections by 35% through evidence-based protocol implementation.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Recruiters spend an average of 7.4 seconds scanning a resume. Quantified bullet points with specific metrics grab attention instantly. Instead of saying 'improved sales,' say 'increased sales pipeline by $1.2M QoQ through targeted outbound campaigns.'</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Nursing resumes must demonstrate clinical competence AND compassion. Use specific patient outcomes: 'Reduced fall rates by 40%' or 'Achieved 100% medication administration accuracy over 2,000+ administrations.' Include your EMR proficiency — hospitals filter by Epic/Cerner experience.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'bullet'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'bullet-nurse'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

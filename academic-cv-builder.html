@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Academic CV Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Lead with your years of experience and core expertise</li><li style="margin-bottom:8px;color:#5C5C5C">Include 2-3 key achievements with metrics</li><li style="margin-bottom:8px;color:#5C5C5C">Mention your industry or specialization</li><li style="margin-bottom:8px;color:#5C5C5C">Keep it to 3-5 sentences maximum</li><li style="margin-bottom:8px;color:#5C5C5C">Tailor it to the specific role you're applying for</li></ol></div>
+  <div class="section"><h2>How to Write a Great Academic CV Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Lead with PhD field, institution, and dissertation focus</li><li style="margin-bottom:8px;color:#5C5C5C">List publication count, citation metrics, and key journals</li><li style="margin-bottom:8px;color:#5C5C5C">Include grant funding secured, teaching experience, and mentorship</li><li style="margin-bottom:8px;color:#5C5C5C">Mention research specialization and methodological expertise</li><li style="margin-bottom:8px;color:#5C5C5C">State career stage: postdoc, assistant professor, tenure-track, etc.</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Experienced professional looking for a new opportunity in a dynamic company.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Results-driven product manager with 7+ years in B2B SaaS, specializing in platform scaling and user acquisition. Led product launches generating $8M in ARR and grew MAU from 50K to 500K. Passionate about data-informed product decisions and cross-functional leadership.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">PhD researcher with publications looking for academic position.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Molecular Biologist (PhD, Stanford 2020) with 14 peer-reviewed publications (850+ citations, h-index 12) in Nature, Cell, and Science. Secured $2.3M in NIH and NSF grant funding as PI. Taught 6 undergraduate and graduate courses; mentored 8 PhD students. Seeking tenure-track assistant professorship at R1 institution.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Your professional summary is your elevator pitch. Skip generic phrases like 'team player' or 'hard-working.' Focus on what makes you uniquely valuable — your specific domain expertise, measurable results, and the problems you solve.</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Academic CVs prioritize publications, grants, and teaching. Lead with your strongest metric: '15 publications, 1,200 citations.' Use field-specific language. For research statements, show your research program's trajectory — past → present → future — not just a list of papers.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'summary'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'summary-academic'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

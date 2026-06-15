@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Creative & Design Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Replace vague verbs with specific action words</li><li style="margin-bottom:8px;color:#5C5C5C">Add context: what was the situation before your work?</li><li style="margin-bottom:8px;color:#5C5C5C">Include measurable outcomes wherever possible</li><li style="margin-bottom:8px;color:#5C5C5C">Remove filler words and get to the point</li><li style="margin-bottom:8px;color:#5C5C5C">Align your language with the job description keywords</li></ol></div>
+  <div class="section"><h2>How to Write a Great Creative & Design Resume</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Lead with your design discipline and tools (Figma, Adobe CC, etc.)</li><li style="margin-bottom:8px;color:#5C5C5C">Show the business impact of your design decisions with metrics</li><li style="margin-bottom:8px;color:#5C5C5C">Include portfolio highlights: brands, projects, award recognition</li><li style="margin-bottom:8px;color:#5C5C5C">Describe your design process: research → wireframe → prototype → test</li><li style="margin-bottom:8px;color:#5C5C5C">Mention cross-functional collaboration with product, engineering, and marketing</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Responsible for social media and posting content on various platforms.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Developed and executed a multi-platform content strategy across Instagram, LinkedIn, and Twitter, growing combined follower count by 340% and driving 2,500+ monthly website visits through organic social.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Graphic designer creating logos and marketing materials for clients.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Brand designer with 6 years creating identity systems for B2B SaaS companies. Redesigned brand for a Series B startup, contributing to a unified product experience that increased free-to-paid conversion by 28%. Proficient in Figma, Adobe Creative Suite, and Webflow.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">The biggest resume mistake is listing responsibilities instead of achievements. 'Responsible for managing a budget' tells me nothing. 'Managed a $2M annual budget, reducing operational costs by 18% while maintaining service quality' tells me everything.</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Design resumes need to speak two languages: creative output AND business results. Show your portfolio, but also show what happened because of your designs. 'Redesigned checkout' becomes 'Redesigned checkout flow, increasing mobile conversion by 18% ($2M incremental annual revenue).'</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'improve'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'improve-creative'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';

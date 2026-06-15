@@ -73,14 +73,14 @@
   <div class="status" id="status"></div>
   <div class="result-box" id="result"><div class="result-header"><span>Generated</span><button class="copy-btn" onclick="copyResult()">Copy</button></div><pre id="resultText"></pre></div>
 
-  <div class="section"><h2>How to Write a Great Startup Resume Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Start with a strong action verb (Led, Built, Delivered, Increased)</li><li style="margin-bottom:8px;color:#5C5C5C">Include specific metrics — numbers, percentages, dollar amounts</li><li style="margin-bottom:8px;color:#5C5C5C">Show the impact: what changed because of your work?</li><li style="margin-bottom:8px;color:#5C5C5C">Keep it to 1-2 lines per bullet point</li><li style="margin-bottom:8px;color:#5C5C5C">Use the STAR format: Situation, Task, Action, Result</li></ol></div>
+  <div class="section"><h2>How to Write a Great Startup Resume Builder</h2><ol style="padding-left:20px"><li style="margin-bottom:8px;color:#5C5C5C">Lead with versatility: highlight the multiple roles you've played</li><li style="margin-bottom:8px;color:#5C5C5C">Quantify growth: users, revenue, team size from 0 to scale</li><li style="margin-bottom:8px;color:#5C5C5C">Show scrappiness: built from scratch, zero-to-one achievements</li><li style="margin-bottom:8px;color:#5C5C5C">Include cross-functional impact across product, sales, ops, and support</li><li style="margin-bottom:8px;color:#5C5C5C">Mention fundraising milestones, investor relationships, or incubator participation</li></ol></div>
 
   <div class="section"><h2>Before & After Example</h2>
-    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">Managed a team of 5 people and worked on quarterly reports.</p></div>
-    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">Led a cross-functional team of 5 analysts, streamlining quarterly reporting processes that reduced delivery time by 40% and eliminated 120+ hours of manual work annually.</p></div>
+    <div style="margin-bottom:16px"><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">Before</p><p style="color:#DC2626;font-style:italic;font-size:14px;background:#FEF2F2;padding:12px;border-radius:4px;border-left:3px solid #DC2626">First employee at a small startup doing many different things.</p></div>
+    <div><p style="font-family:-apple-system,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#9C9C9C;margin-bottom:8px">After (AI-Generated)</p><p style="color:#166534;font-size:14px;background:#F0FDF4;padding:12px;border-radius:4px;border-left:3px solid #16A34A">As first business hire at a seed-stage fintech startup, built and led customer success, sales operations, and content marketing from zero. Grew customer base from 50 to 2,500 in 14 months, designed onboarding reducing churn from 8% to 2.1% monthly, and contributed to Series A deck that raised $6M.</p></div>
   </div>
 
-  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Recruiters spend an average of 7.4 seconds scanning a resume. Quantified bullet points with specific metrics grab attention instantly. Instead of saying 'improved sales,' say 'increased sales pipeline by $1.2M QoQ through targeted outbound campaigns.'</p></div>
+  <div class="section"><h2>Tips for Better Results</h2><p style="color:#5C5C5C;line-height:1.8">Startup experience is gold if framed correctly. Don't apologize for wearing many hats — that's the strength. Show impact across functions: 'Built support process that scaled from 10 to 500 tickets/week without adding headcount.' Investors and acquirers love operators who can build systems from chaos.</p></div>
 
   <div class="faq"><h2>FAQ</h2>
     <details open><summary>How does it work?</summary><p>Describe your experience in the input above. Our AI generates polished, achievement-focused resume content optimized for recruiters and ATS systems.</p></details>
@@ -101,7 +101,7 @@ async function generate(){
   document.getElementById('status').textContent='';
   document.getElementById('result').classList.remove('show');
   try{
-    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'bullet'})});
+    const r=await fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:t,type:'bullet-startup'})});
     const d=await r.json();
     if(!r.ok){document.getElementById('status').textContent=d.error||'Error';return}
     document.getElementById('resultText').textContent=d.result||'Could not generate.';
