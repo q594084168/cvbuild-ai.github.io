@@ -1,0 +1,19 @@
+# CVBuild-AI — AI Resume Builder
+# llms.txt — AI crawler content index
+
+## What We Do
+Transform plain-English work experience into recruiter-ready resume content — bullet points, summaries, and skills lists. Free, no sign-up.
+
+## Key Differentiators
+- Pure CSS magazine-style design (Georgia font, warm cream background)
+- Industry-specific builders: Nurse, Teacher, Tech/IT, Finance, Marketing, Healthcare
+- ATS-optimized output with keyword integration
+
+## Primary Content
+- Homepage: / — tool + industry cards + FAQ
+- Industry pages: /nurse-resume-builder.html, /tech-it-resume-builder.html — 28 specialized builders
+- Guides: /how-to-write-resume-bullet-points.html, /ats-resume-keywords-guide.html
+
+## FAQ
+Q: Free? A: Yes, completely free, no signup, no limits.
+Q: ATS-friendly? A: Yes. Clean, keyword-rich content formatted for Applicant Tracking Systems.
